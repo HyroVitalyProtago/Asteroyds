@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Author</key>
+	<string>DAVID Ludovic (Hyro Vitaly Protago)</string>
+	<key>Buffer Order</key>
+	<array>
+		<string>AnotherMove</string>
+		<string>Asteroyds</string>
+		<string>Chrono</string>
+		<string>Des</string>
+		<string>Interface</string>
+		<string>Main</string>
+		<string>Menu</string>
+		<string>Move</string>
+		<string>MoveA</string>
+		<string>OrientationAsteroyds</string>
+		<string>Pilote</string>
+		<string>Plateau</string>
+		<string>Rules</string>
+		<string>Vaisseaux</string>
+	</array>
+	<key>Created</key>
+	<string>2012-02-13 18:19:55 +0000</string>
+	<key>Description</key>
+	<string>The race against death of the Lost Swarm, Ujitos, was voted "the most dangerous event of the Independants Circuit" for the eleventh GS year in a row by the Toberas Ardicentes magazine.</string>
+</dict>
+</plist>
