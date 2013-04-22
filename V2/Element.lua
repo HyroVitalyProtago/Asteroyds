@@ -15,3 +15,4 @@ function Element:init(isShip, filter, orientation)
 end
 
 function Element:draw() end
+
