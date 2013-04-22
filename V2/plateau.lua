@@ -26,16 +26,16 @@ function Plateau:init()
 	self.asteroyds = {}
 
 	-- Doors
-	self.doors = {}
+	--self.doors = {}
 
-	local getIndiceInLookupTableOf = function(n) {
+	local getIndiceInLookupTableOf = function(n)
 		for i,v in ipairs(asteroydsLookupTable) do
 			if v == n then
 				return i
 			end
 		end
 		--return -1
-	}
+	end
 
 	-- no more table or change code of getPosition and getObj
 end
