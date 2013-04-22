@@ -1,6 +1,6 @@
 Ship = class(Element)
 
-function init(orientation)
+function Ship:init(orientation)
 	Element.init(self, true, Element.filters.SHIP_NO_COLLISION, orientation)
 
 	local rotate = function(angle)
@@ -15,10 +15,24 @@ function init(orientation)
 
 end
 
-function turnLeft()
+function Ship:turnLeft()
 	rotate(1)
 end
 
-function turnRight()
+function Ship:turnRight()
 	rotate(-1)
+end
+
+function Ship:turnBack()
+	rotate(3)
+end
+
+function Ship:draw()
+	pushMatrix()
+
+	--rotate()
+	--translate()
+	--sprite()
+
+	popMatrix()
 end

@@ -13,3 +13,5 @@ function Element:init(isShip, filter, orientation)
 	self.orientation = orientation
 
 end
+
+function Element:draw() end

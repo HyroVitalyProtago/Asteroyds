@@ -17,3 +17,13 @@ function Asteroyd:init(type, priority, orientation)
 	self.priority = priority
 
 end
+
+function Asteroyd:draw()
+	pushMatrix()
+
+	--rotate()
+	--translate()
+	--sprite()
+
+	popMatrix()
+end
