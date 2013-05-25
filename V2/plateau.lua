@@ -45,7 +45,7 @@ function Plateau:addShip(li, co, ship)
 	pos.li = li
 	pos.co = co
 
-	if(not self:in(li,co) or self.asteroyds[pos] ~= nil) then
+	if (not self:in(li,co) or self.asteroyds[pos] ~= nil) then
 		-- assert() ?
 		return false
 	end
@@ -58,7 +58,7 @@ function Plateau:addAsteroyd(li, co, asteroyd)
 	pos.li = li
 	pos.co = co
 
-	if(not self:in(li,co) or self.ships[pos] ~= nil) then
+	if (not self:in(li,co) or self.ships[pos] ~= nil or self.asteroyds[pos] ~= nil) then
 		return false
 	end
 
@@ -87,6 +87,15 @@ function Plateau:getObj(li, co)
 					return v2
 				end
 			end
+		end
+	end
+	return nil
+end
+
+function Plateau:getObj(tab, li, co)
+	for k,v in pairs(tab) do
+		if (k.li == li and k.co == co) then
+			return v
 		end
 	end
 	return nil
@@ -130,8 +139,44 @@ end
 ]]--
 
 -- VIEW
-function Plateau:draw()
-	--TODO
+function Plateau:draw(pw, ph)
+
+	local size = #_plateau
+	local w = pw/16.5
+	local h = ph/7
+
+	for li=1,size do
+		for co=1,size do
+			
+			local x,y
+
+			-- Mode Center
+			if li % 2 == 1 then
+				x = w/2 + ((co-1)*w)
+			else
+				x = co * w
+			end
+
+			y = h/2 + ((li-1)*h)
+
+			translate(x, y)
+
+			sprite("Documents:hexagone", 0, 0, w, h)
+
+			-- content
+			local asteroyd = self:getObj(self.asteroyds, li, co)
+			if asteroyd then
+				asteroyd:draw()
+			else
+				local door = self:getObj(self.doors, li, co)
+				if door then door:draw() end
+				local ship = self:getObj(self.ships, li, co)
+				if ship then ship:draw() end
+			end
+
+		end
+	end
+
 end
 
 -- UTILS

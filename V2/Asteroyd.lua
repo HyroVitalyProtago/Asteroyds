@@ -2,6 +2,10 @@ Asteroyd = class(Element)
 
 Asteroyd.types = {RED=1, WHITE=2, BLUE=3, WHITE_RED=4, WHITE_BLUE=5, DOOR_WHITE=6, DOOR_RED=7, POD=8, PLATFORM=9}
 
+function Asteroyd.getAsteroyds()
+
+end
+
 function Asteroyd:init(type, priority, orientation)
 
 	assert(type >= 1 or type <= #Asteroyd.types, "Asteroyd: type invalid")
