@@ -148,6 +148,8 @@ function Plateau:draw(pw, ph)
 	for li=1,size do
 		for co=1,size do
 			
+			pushMatrix()
+
 			local x,y
 
 			-- Mode Center
@@ -173,6 +175,8 @@ function Plateau:draw(pw, ph)
 				local ship = self:getObj(self.ships, li, co)
 				if ship then ship:draw() end
 			end
+
+			popMatrix()
 
 		end
 	end

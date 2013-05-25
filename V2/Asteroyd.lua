@@ -26,8 +26,10 @@ function Asteroyd:draw()
 	pushMatrix()
 
 	--translate()
-	--rotate()
-	--sprite()
+	rotate(self.orientation * 60)
+	--sprite("")
+
+	-- draw priority ?
 
 	popMatrix()
 end
