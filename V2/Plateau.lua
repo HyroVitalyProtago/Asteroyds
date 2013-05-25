@@ -167,14 +167,9 @@ function Plateau:draw(pw, ph)
 
 			-- content
 			local asteroyd = self:getObj(self.asteroyds, li, co)
-			if asteroyd then
-				asteroyd:draw()
-			else
-				local door = self:getObj(self.doors, li, co)
-				if door then door:draw() end
-				local ship = self:getObj(self.ships, li, co)
-				if ship then ship:draw() end
-			end
+			if asteroyd then asteroyd:draw() end
+			local ship = self:getObj(self.ships, li, co)
+			if ship then ship:draw() end
 
 			popMatrix()
 
