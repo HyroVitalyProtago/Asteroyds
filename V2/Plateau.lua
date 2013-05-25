@@ -45,7 +45,7 @@ function Plateau:addShip(li, co, ship)
 	pos.li = li
 	pos.co = co
 
-	if (not self:in(li,co) or self.asteroyds[pos] ~= nil) then
+	if (not self:contain(li,co) or self.asteroyds[pos] ~= nil) then
 		-- assert() ?
 		return false
 	end
@@ -58,7 +58,7 @@ function Plateau:addAsteroyd(li, co, asteroyd)
 	pos.li = li
 	pos.co = co
 
-	if (not self:in(li,co) or self.ships[pos] ~= nil or self.asteroyds[pos] ~= nil) then
+	if (not self:contain(li,co) or self.ships[pos] ~= nil or self.asteroyds[pos] ~= nil) then
 		return false
 	end
 
@@ -105,7 +105,7 @@ end
 function Plateau:moveShip(ship)
 	local pos = {}
 	pos.li, pos.co = movements[ship.orientation](self:getPosition(ship))
-	if self:in(pos.li, pos.co) and self.asteroyds[pos] == nil then
+	if self:contain(pos.li, pos.co) and self.asteroyds[pos] == nil then
 		return true
 	end
 	return false
@@ -121,7 +121,7 @@ function Plateau:moveAsteroyd(asteroyd, des)
 	indice = asteroydsLookupTable[indice]
 
 	pos.li, pos.co = movements[indice](self:getPosition(asteroyd))
-	if self:in(pos.li, pos.co) and self.ships[pos] == nil then
+	if self:contain(pos.li, pos.co) and self.ships[pos] == nil then
 		return true
 	end
 	return false
@@ -180,7 +180,7 @@ function Plateau:draw(pw, ph)
 end
 
 -- UTILS
-function Plateau:in(li, co)
+function Plateau:contain(li, co)
 	return li >= 1 and li <= LI and co >= 1 and co <= CO and _plateau[li][co] == 0
 end
 function Plateau.getNordOuest(li, co)
