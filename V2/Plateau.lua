@@ -117,7 +117,7 @@ function Plateau:moveAsteroyd(asteroyd, des)
 
 	local indice = self:getIndiceInLookupTableOf(des)
 	indice = indice + (asteroyd.orientation - 1)
-	if (indice > 6) indice = (indice%7)+1
+	if (indice > 6) then indice = (indice%7)+1 end
 	indice = asteroydsLookupTable[indice]
 
 	pos.li, pos.co = movements[indice](self:getPosition(asteroyd))
