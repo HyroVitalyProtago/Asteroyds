@@ -4,7 +4,7 @@ Asteroyd.types = {RED=1, WHITE=2, BLUE=3, WHITE_RED=4, WHITE_BLUE=5, DOOR_WHITE=
 
 function Asteroyd:init(type, priority, orientation)
 
-	assert(type < 1 or type > #Asteroyd.types, "Asteroyd: type invalid")
+	assert(type >= 1 or type <= #Asteroyd.types, "Asteroyd: type invalid")
 
 	filter = Element.filters.SHIP_COLLISION
 	if (type >= Asteroyd.types.POD and type <= Asteroyd.types.PLATFORM) then
@@ -21,8 +21,8 @@ end
 function Asteroyd:draw()
 	pushMatrix()
 
-	--rotate()
 	--translate()
+	--rotate()
 	--sprite()
 
 	popMatrix()

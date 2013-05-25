@@ -5,22 +5,21 @@ function Ship:init(orientation)
 end
 
 function Ship:turnLeft()
-	rotate(1)
+	self:rotate(1)
 end
 
 function Ship:turnRight()
-	rotate(-1)
+	self:rotate(-1)
 end
 
 function Ship:turnBack()
-	rotate(3)
+	self:rotate(3)
 end
 
 function Ship:rotate(angle)
 	self.orientation = self.orientation + angle
 	if (self.orientation < 0) then
 		self.orientation = self.orientation + 6
-		--rotate(0)
 	elseif (self.orientation > 6) then
 		self.orientation = self.orientation % 6
 	end
@@ -29,8 +28,8 @@ end
 function Ship:draw()
 	pushMatrix()
 
-	--rotate()
 	--translate()
+	--rotate()
 	--sprite()
 
 	popMatrix()

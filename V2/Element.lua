@@ -5,8 +5,8 @@ Element.orientations = {EST=0, NORD_EST=1, NORD_OUEST=2, OUEST=3, SUD_OUEST=4, S
 
 function Element:init(isShip, filter, orientation)
 
-	assert(filter < 1 or filter > #Element.filters, "Element: filter invalid")
-	assert(orientation < 1 or orientation > #Element.orientations, "Element: orientation invalid")
+	assert(filter >= 1 or filter <= #Element.filters, "Element: filter invalid")
+	assert(orientation >= 1 or orientation <= #Element.orientations, "Element: orientation invalid")
 
 	self.isShip = isShip
 	self.filter = filter

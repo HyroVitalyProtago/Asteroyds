@@ -45,7 +45,7 @@ function Plateau:addShip(li, co, ship)
 	pos.li = li
 	pos.co = co
 
-	if(~self:in(li,co) or self.asteroyds[pos] ~= nil) then
+	if(not self:in(li,co) or self.asteroyds[pos] ~= nil) then
 		-- assert() ?
 		return false
 	end
@@ -58,7 +58,7 @@ function Plateau:addAsteroyd(li, co, asteroyd)
 	pos.li = li
 	pos.co = co
 
-	if(~self:in(li,co) or self.ships[pos] ~= nil) then
+	if(not self:in(li,co) or self.ships[pos] ~= nil) then
 		return false
 	end
 
