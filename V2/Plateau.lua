@@ -159,7 +159,7 @@ function Plateau:draw(pw, ph)
                 x = co * w
             end
 
-            y = h/2 + ((li-1)*h)
+            y = h/2 + ((li-1)*h*1.5)
 
             translate(x, y)
 
