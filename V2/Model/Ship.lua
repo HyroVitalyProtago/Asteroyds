@@ -1,4 +1,8 @@
-Ship = class(Element)
+-- Model.Ship
+
+local Element = require "Model.Element"
+
+local Ship = class(Element)
 
 function Ship:init(orientation)
 	Element.init(self, true, Element.filters.SHIP_NO_COLLISION, orientation)
@@ -20,7 +24,7 @@ function Ship:rotate(angle)
 	self.orientation = self.orientation + angle
 	if (self.orientation < 0) then
 		self.orientation = self.orientation + 6
-	elseif (self.orientation > 6) then
+	elseif (self.orientation >= 6) then
 		self.orientation = self.orientation % 6
 	end
 end
@@ -34,3 +38,5 @@ function Ship:draw()
 
 	popMatrix()
 end
+
+return Ship

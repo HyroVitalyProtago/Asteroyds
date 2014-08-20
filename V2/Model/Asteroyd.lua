@@ -1,6 +1,20 @@
-Asteroyd = class(Element)
+-- Model.Asteroyd
 
-Asteroyd.types = {RED=1, WHITE=2, BLUE=3, WHITE_RED=4, WHITE_BLUE=5, DOOR_WHITE=6, DOOR_RED=7, POD=8, PLATFORM=9}
+local Element = require "Model.Element"
+
+local Asteroyd = class(Element)
+
+Asteroyd.types = {
+	RED = 1,
+	WHITE = 2,
+	BLUE = 3,
+	WHITE_RED = 4,
+	WHITE_BLUE = 5,
+	DOOR_WHITE = 6,
+	DOOR_RED = 7,
+	POD = 8,
+	PLATFORM = 9
+}
 
 function Asteroyd.getAsteroyds()
 
@@ -33,3 +47,5 @@ function Asteroyd:draw()
 
 	popMatrix()
 end
+
+return Asteroyd
