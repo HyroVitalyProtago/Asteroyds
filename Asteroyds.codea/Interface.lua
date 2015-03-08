@@ -40,7 +40,7 @@ function Interface:draw1()
         fill(255, 255, 255, self.opacity)       
         text("Un jeu de G.Blossier & F.Henry - illustré par Nicolas Fructus",self.tx1 ,self.ty1)
         text("Editeur : Ystari",self.tx2 ,self.ty2)
-        text("Programmeur : Ludovic DAVID",self.tx3 ,self.ty3)
+        text("Programmeur : Hyro Vitaly Protago",self.tx3 ,self.ty3)
         
         if (self.tx1 < WIDTH/2) then        
             self.tx1 = self.tx1 + 2
